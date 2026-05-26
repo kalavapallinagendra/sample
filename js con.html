@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>To Do List</title>
+        <style>
+             .input-group {
+                display: flex;
+                gap: 10px;
+             }
+             
+
+             li {
+                border-left: 4px solid cyan;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                
+
+             }
+
+             #task-input {
+                padding: 10px;
+                border-radius: 25px;
+                border: 3px solid black;
+             }
+
+
+             #add-btn {
+                background-color: cyan;
+                padding: 10px;
+                border-radius: 25px;
+                cursor: pointer;
+                border: 3px solid black;
+             }
+
+             #add-btn:hover {
+                background-color: lightyellow;
+             }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="todo-list">
+            <h1>To Do List</h1>
+            <div class="input-group">
+                <input type="text" id="task-input"  placeholder="Enter Notes...">
+                <button id="add-btn">Add Task</button>
+            </div>
+
+            <ul id="task-list"> 
+               
+            </ul>
+
+
+        </div>
+        
+
+        <script>
+            const addBtn = document.getElementById('add-btn');
+            const taskInput = document.getElementById('task-input');
+            const taskList = document.getElementById('task-list');
+
+            addBtn.addEventListener('click', ()=> {
+                const taskText = taskInput.value;   //Hello
+
+                if (taskText === "") {
+                    alert("Please enter a task!");
+                    return;
+                }
+
+                const newLi = document.createElement('li');
+                newLi.innerText = taskText;    //<li>Hello</li>
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.innerText = "Delete";
+
+                newLi.appendChild(deleteBtn);  // <li>Hello <button>Delete</button></li>
+                taskList.appendChild(newLi);   // <ul><li>Hello <button>Delete</button></li></ul>
+
+
+                deleteBtn.addEventListener('click', () => {
+                    newLi.remove();
+                });
+
+
+
+
+                taskInput.value = "";  // Clear the input field after adding the task
+
+            
+
+
+                
+
+
+
+
+               
+            })
+
+        </script>
+    </body>
+</html>

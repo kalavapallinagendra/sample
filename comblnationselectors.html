@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root{
+  --background-color: aqua;
+--border:red;
+}
+
+.parent  .sub {
+  background-color: var(--background-color);
+  border:var(--background-color);
+}
+
+
+.parent >.child {
+  border-color: var(--border);
+}
+
+
+.child ~ .child {
+  background-color:var(--background-color);
+}
+
+
+.child ~ .child {
+  color:brown;
+}
+
+
+.parent {
+  border: var(--border) 4px solid;
+  padding: 15px;
+  width: 400px;
+}
+
+.child {
+  border: 2px solid blue;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 5px 5px violet;
+}
+
+.sub {
+  border: 1px solid lightgray;
+  margin: 5px;
+  padding: 5px;
+  text-shadow: 1px 2px brown;
+}
+
+</style>
+</head>
+<body>
+
+<div class="parent">
+  Parent
+
+  <div class="child">
+    Child 1
+    <div class="sub">Sub Child 1</div>
+    <div class="sub">Sub Child 2</div>
+    <div class="sub">Sub Child 3</div>
+  </div>
+
+  <div class="child">
+    Child 2
+    <div class="sub">Sub Child 4</div>
+  </div>
+
+  <div class="child">
+    Child 3
+  </div>
+
+</div>
+
+</body>
+</html>

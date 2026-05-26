@@ -1,0 +1,44 @@
+ <html>
+  <head>
+    <title>Home</title>
+    <style>
+      .head {
+        background-color: lightblue;
+        grid-area: a;
+      }
+      .side {
+        background-color: lightgreen;
+        grid-area: b;
+      }
+      .main {  
+        background-color: lightyellow;
+        grid-area: c;
+      }
+      .foot {
+        background-color: lightgray;
+        grid-area: d;
+      }
+
+      .box {
+        display: grid;
+        grid-template-areas:  "a a a"
+                             "b b c"
+                             "d d d";
+        grid-gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="box">
+    <div class="head">Header</div>
+    <div class="side">Sidebar</div>
+    <div class="main">Main Content</div>
+    <div class="foot">Footer</div>
+  </div>
+   
+
+
+
+  </body>
+</html>

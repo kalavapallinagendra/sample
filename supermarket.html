@@ -1,0 +1,149 @@
+!<DOCTYPE html>
+<html>
+<head>
+  <title>Super Market</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: green;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Product Section */
+    .products {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      width: 150px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .product button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    /* Navigation Buttons */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Footer Cart */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .cart-bar button {
+      background: orange;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo"> logo     Fresh Mart</div>
+  <div>Super Store</div>
+</header>
+
+<!-- Navigation -->
+<div class="nav">
+  <button onclick="prev()">⬅️ Prev</button>
+  <button onclick="next()">Next ➡️</button>
+</div>
+
+<!-- Products -->
+<div class="products" id="productList">
+  <div class="product">
+    <h3>Apple</h3>
+    <p>₹100</p>
+    <button onclick="addToCart(100)">Add</button>
+  </div>
+
+  <div class="product">
+    <h3>Milk</h3>
+    <p>₹50</p>
+    <button onclick="addToCart(50)">Add</button>
+  </div>
+
+  <div class="product">
+    <h3>Rice</h3>
+    <p>₹500</p>
+    <button onclick="addToCart(500)">Add</button>
+  </div>
+
+  <div class="product">
+    <h3>Bread</h3>
+    <p>₹40</p>
+    <button onclick="addToCart(40)">Add</button>
+  </div>
+</div>
+
+<!-- Cart Footer -->
+<div class="cart-bar">
+  <div>Total: ₹ <span id="total">0</span></div>
+  <button onclick="checkout()">Cart</button>
+</div>
+
+<script>
+let total = 0;
+
+function addToCart(price) {
+  total += price;
+  document.getElementById("total").innerText = total;
+}
+
+function checkout() {
+  alert("Total amount: ₹ " + total);
+}
+
+function prev() {
+  alert("Previous items");
+}
+
+function next() {
+  alert("Next items");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #count{
+            background-color: aqua;
+            text-align: center;
+            color:blue;
+        }
+        #go{
+            background-color: brown;
+            border-radius:25px ;
+            color: chartreuse;
+        }
+        #owo{
+            background-color: greenyellow;
+            border-radius: 40px;
+            border: 5px solid goldenrod;
+        }
+    </style>
+</head>
+<body>
+   <h2>counter</h2>
+   <p id="count" style=" font-size: 40px;">0</p>
+   <button  id="go" onclick="increasecount()">+</button>
+    <button id="go" onclick="decreasecount()">-</button>
+    <button id="owo" onclick="resetcount()">reset</button>
+   <button onclick="savecount()">save</button>
+   <button onclick="loadcount()">load</button>
+   <script>
+    let count=0;
+    function updatecount(){
+        document.getElementById("count").innerHTML=count;
+    }
+    function increasecount(){
+            count++;
+            updatecount();
+        }
+        function decreasecount(){
+            count--;
+            updatecount();
+        }
+    function reset(){
+        count=0;
+        updatecount();
+    }
+    function savecount(){
+        localStorage.setItem("count",count);
+
+    }
+    function loadcount(){
+        let saved  =localStorage.getItem("count");
+        if(saved!==null){
+            count =Number(saved);
+        }
+        updatecount();
+    }
+   </script>
+</body>
+</html>
